@@ -6,7 +6,7 @@
     <td align="center"><a href="https://github.com/"><img src="https://avatars.githubusercontent.com/u/83609571?v=4" width="100px;" alt=""/><br /><img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=seungui0325" widt="100px"><br /><sub><b>박서하</b></sub></a><br /><sub><b>박서하👍</b><br>INTP</br></sub></td>      
     <td align="center"><a href="https://github.com/ljh0401"><img src="https://avatars.githubusercontent.com/u/78478247?v=4" width="100px;" alt=""/><br /><img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=ljh0401" widt="100px"><br /><sub><b>이준환</b></sub></a><br /><sub><b>알고짱🏆</b><br>INTP</br></sub></td>      
     <td align="center"><a href="https://github.com/pasongvan"><img src="https://avatars.githubusercontent.com/u/175183776?v=4" width="100px;" alt=""/><br /><img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=piisbin" widt="100px"><br /><sub><b>피승빈</b></sub></a><br /><sub><b>유튜버😎</b><br>ISFJ</br></sub></td> 
-    <td align="center"><a href=" https://github.com/isemae"><img src="https://avatars.githubusercontent.com/u/55517023?v=4" width="100px;" alt=""/><br /><img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=deleted_13" widt="100px"><br /><sub><b>이지운</b></sub></a><br /><sub><b>뉴멤버😜</b><br>????</br></sub></td>    
+    <td align="center"><a href="https://github.com/isemae"><img src="https://avatars.githubusercontent.com/u/55517023?v=4" width="100px;" alt=""/><br /><img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=deleted_13" widt="100px"><br /><sub><b>이지운</b></sub></a><br /><sub><b>뉴멤버😜</b><br>????</br></sub></td>    
   </tr>
 </table><br/>
 
