@@ -1,4 +1,4 @@
-package BOJ_S4_인사성_밝은_곰곰이_25192;
+package BOJ_S4_25192_인사성_밝은_곰곰이;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
