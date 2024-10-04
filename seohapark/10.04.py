@@ -1,5 +1,5 @@
 class UnionFind:
-    def __init__(self, sz):
+    def __init__(self, sz):#시작
         self.parent = list(range(sz))
         self.rank = [1] * sz
         self.cnt = [1] * sz
