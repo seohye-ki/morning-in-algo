@@ -59,9 +59,10 @@ public class Main {
 
 				// 현재 노드의 하위 노드에 대해
 				for (int j = 0; j < al.get(curr).size(); j++) {
+					// 하위 노드의 진입차수를 감소시킴
 					cnt[al.get(curr).get(j)]--;
 					if (cnt[al.get(curr).get(j)] == 0) {
-						// 카운트가 0인 노드를 큐에 넣음
+						// 진입 차수가 0인 노드를 큐에 넣음
 						q.offer(al.get(curr).get(j));
 					}
 				}
