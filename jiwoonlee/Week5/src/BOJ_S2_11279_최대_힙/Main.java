@@ -1,4 +1,4 @@
-package BOJ_S2_1927_최소_힙;
+package BOJ_S2_11279_최대_힙;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -23,7 +23,7 @@ public class Main {
 				if (size == 0) {
 					System.out.println(0);
 				} else {
-					System.out.println(getMin());
+					System.out.println(getMax());
 				}
 			}
 		}
@@ -33,34 +33,34 @@ public class Main {
 		mh[++size] = v;
 		int idx = size;
 
-		while (mh[idx / 2] > mh[idx] && idx >= 2) {
+		while (mh[idx / 2] < mh[idx] && idx >= 2) {
 			swap(idx / 2, idx);
 			idx /= 2;
 		}
 	}
 
-	static int getMin() {
+	static int getMax() {
 		if (size == 0)
 			return 0;
-		int min = mh[1];
+		int max = mh[1];
 		mh[1] = mh[size--];
 		heap(1);
-		return min;
+		return max;
 	}
 
 	static void heap(int idx) {
-		int min = idx;
+		int max = idx;
 		while (true) {
 			int l = idx * 2;
 			int r = idx * 2 + 1;
-			if (l <= size && mh[l] < mh[min])
-				min = l;
-			if (r <= size && mh[r] < mh[min])
-				min = r;
+			if (l <= size && mh[l] > mh[max])
+				max = l;
+			if (r <= size && mh[r] > mh[max])
+				max = r;
 
-			if (min != idx) {
-				swap(idx, min);
-				idx = min;
+			if (max != idx) {
+				swap(idx, max);
+				idx = max;
 			} else {
 				break;
 			}
