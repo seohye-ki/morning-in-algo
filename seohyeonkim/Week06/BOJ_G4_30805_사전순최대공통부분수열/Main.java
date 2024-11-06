@@ -16,8 +16,8 @@ class Main {
         @Override
         public int compareTo(point p){
             if (this.value == p.value)
-                return Integer.compare(this.idx, p.idx);
-            return Integer.compare(p.value, this.value);
+                return this.idx - p.idx;
+            return p.value - this.value;
         }
     }
     
@@ -35,52 +35,43 @@ class Main {
         for(int i = 0; i < M; i++)
             B[i] = sc.nextInt();
 
-        List<point> listA = new ArrayList<>();
-        List<point> listB = new ArrayList<>();
+        PriorityQueue<point> pqA = new PriorityQueue<>();
+        PriorityQueue<point> pqB = new PriorityQueue<>();
         for(int i = 0; i < N; i++)
-            listA.add(new point(A[i], i));
+            pqA.add(new point(A[i], i));
         for(int i = 0; i < M; i++)
-            listB.add(new point(B[i], i));
+            pqB.add(new point(B[i], i));
 
-        Collections.sort(listA);
-        Collections.sort(listB);
-        
-        // for(point p : listA)
-        //     sb.append(p.value).append(" ");
-        // sb.append("\n");
-        // for(point p : listA)
-        //     sb.append(p.idx).append(" ");
-        // sb.append("\n");
-        // for(point p : listB)
-        //     sb.append(p.value).append(" ");
-        // sb.append("\n");
-        // for(point p : listB)
-        //     sb.append(p.idx).append(" ");
-        // sb.append("\n");
-        // System.out.println(sb);
-     
         List<Integer> result = new ArrayList<>();
-        int idxA = 0;
-        int idxB = 0;
-        int preIdx = -1;
+        int preIdxA = -1;
+        int preIdxB = -1;
 
-        while(idxA < N && idxB < M){
-            //값이 같고 이미 들어가있는 값의 인덱스보다 크다면
-            if(listA.get(idxA).value == listB.get(idxB).value && preIdx < listA.get(idxA).idx) {
-                result.add(listA.get(idxA).value);
-                preIdx = listA.get(idxA).idx;
-                idxA++;
-                idxB++;
+        while(!pqA.isEmpty() && !pqB.isEmpty()){
+            if(pqA.peek().value == pqB.peek().value) {
+                while(!pqA.isEmpty() && !pqB.isEmpty() && pqA.peek().value == pqB.peek().value){
+                    if(preIdxA < pqA.peek().idx && preIdxB < pqB.peek().idx){
+                        result.add(pqA.peek().value);
+                        preIdxA = pqA.poll().idx;
+                        preIdxB = pqB.poll().idx;
+                        break;
+                    }
+                    else {
+                        if(pqA.peek().idx < preIdxA)
+                            pqA.poll();
+                        if(pqB.peek().idx < preIdxB)
+                            pqB.poll();
+                    }
+                }
             }
-            else if(listA.get(idxA).value > listB.get(idxB).value)
-                idxA++;
+            else if(pqA.peek().value > pqB.peek().value)
+                pqA.poll();
             else
-                idxB++;
+                pqB.poll();
         }
         
         sb.append(result.size()).append("\n");
         for(int value : result)
             sb.append(value).append(" ");
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
